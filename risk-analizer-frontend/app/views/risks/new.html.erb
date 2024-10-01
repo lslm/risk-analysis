@@ -1,0 +1,140 @@
+<h1>Risk Analyzer</h1>
+
+<%= form_tag risks_path, method: :post do %>
+
+  <div class="field">
+    <label for="age">Idade</label>
+    <%= number_field_tag :age %>
+  </div>
+
+  <div class="field">
+    <label for="annual_income">Renda Anual</label>
+    <%= number_field_tag :annual_income, step: :any %>
+  </div>
+
+  <div class="field">
+    <label for="credit_score">Qual o score de crédito do aplicante?</label>
+    <%= number_field_tag :credit_score %>
+  </div>
+
+  <div class="field">
+    <label for="employment_status">Situação de trabalho</label>
+    <%= select_tag :employment_status, options_for_select([['Empregado', 0], ['Autônomo', 1], ['Desempregado', 2]]) %>
+  </div>
+
+  <div class="field">
+    <label for="education_level">Escolaridade</label>
+    <%= select_tag :education_level, options_for_select([['Ensino médio', 3], ['Bacharelado', 1], ['MBA', 0], ['Mestrado', 4], ['Doutorado', 2]]) %>
+  </div>
+
+  <div class="field">
+    <label for="experience">Há quanto tempo trabalha</label>
+    <%= number_field_tag :experience %>
+  </div>
+
+  <div class="field">
+    <label for="loan_amount">Valor do empréstimo</label>
+    <%= number_field_tag :loan_amount, step: :any %>
+  </div>
+
+  <div class="field">
+    <label for="loan_duration">Qual o tempo de duração do empréstimo (meses)</label>
+    <%= number_field_tag :loan_duration %>
+  </div>
+
+  <div class="field">
+    <label for="number_of_dependents">Número de dependentes</label>
+    <%= number_field_tag :number_of_dependents %>
+  </div>
+
+  <div class="field">
+    <label for="home_ownership_status">Situação de moradio</label>
+    <%= select_tag :home_ownership_status, options_for_select([['Própria', 2], ['Alugada', 3], ['Financiada', 0], ['Outro', 1]]) %>
+  </div>
+
+  <div class="field">
+    <label for="monthly_debt_payments">Valor da parcela</label>
+    <%= number_field_tag :monthly_debt_payments, step: :any %>
+  </div>
+
+  <div class="field">
+    <label for="number_of_open_credit_lines">Quantidade de empréstimos ativos</label>
+    <%= number_field_tag :number_of_open_credit_lines %>
+  </div>
+
+  <div class="field">
+    <label for="number_of_credit_inquiries">Quantidade de pedidos de crédito</label>
+    <%= number_field_tag :number_of_credit_inquiries %>
+  </div>
+
+  <div class="field">
+    <label for="bankruptcy_history">Possui histórico de falência?</label>
+    <%= check_box_tag :bankruptcy_history, false %>
+  </div>
+
+  <div class="field">
+    <label for="previous_loan_defaults">Possui histórico de calotes?</label>
+    <%= check_box_tag :previous_loan_defaults, false %>
+  </div>
+
+  <div class="field">
+    <label for="payment_history">Quantidade pagamentos</label>
+    <%= number_field_tag :payment_history %>
+  </div>
+
+  <div class="field">
+    <label for="length_of_credit_history">Quantidade de créditos concedidos</label>
+    <%= number_field_tag :length_of_credit_history %>
+  </div>
+
+  <div class="field">
+    <label for="savings_account_balance">Valor total na poupança</label>
+    <%= number_field_tag :savings_account_balance, step: :any %>
+  </div>
+
+  <div class="field">
+    <label for="checking_account_balance">Valor total em contas corrente</label>
+    <%= number_field_tag :checking_account_balance, step: :any %>
+  </div>
+
+
+  <div class="field">
+    <label for="total_liabilities">Total em dívidas</label>
+    <%= number_field_tag :total_liabilities, step: :any %>
+  </div>
+
+  <div class="field">
+    <label for="monthly_income">Renda mensal</label>
+    <%= number_field_tag :monthly_income, step: :any %>
+  </div>
+
+  <div class="field">
+    <label for="utility_bills_payment_history">Despezas mensais</label>
+    <%= number_field_tag :utility_bills_payment_history, step: :any %>
+  </div>
+
+  <div class="field">
+    <label for="job_tenure">Está empregado no último emprego há quantos anos</label>
+    <%= number_field_tag :job_tenure %>
+  </div>
+
+  <div class="field">
+    <label for="base_interest_rate">Taxa de juros básica atual</label>
+    <%= number_field_tag :base_interest_rate, step: :any %>
+  </div>
+
+  <div class="field">
+    <label for="interest_rate">Taxa de juros do empréstimo</label>
+    <%= number_field_tag :interest_rate, step: :any %>
+  </div>
+
+  <div class="field">
+    <label for="monthly_loan_payment">Parcela mensal do empréstimo</label>
+    <%= number_field_tag :monthly_loan_payment, step: :any %>
+  </div>
+
+  <p>
+    <%= submit_tag "Obter risco de crédito" %>
+  </p>
+
+<% end %>
