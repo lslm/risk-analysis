@@ -1,0 +1,167 @@
+<h1 class="text-4xl font-bold mb-8 text-center text-gray-800">Risk Analyzer</h1>
+
+<%= form_tag risks_path, method: :post, class: "max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-lg" do %>
+
+  <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+    <!-- Idade -->
+    <div class="field">
+      <label for="age" class="block text-sm font-medium text-gray-700">Idade</label>
+      <%= number_field_tag :age, nil, class: "mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" %>
+    </div>
+
+    <!-- Renda Anual -->
+    <div class="field">
+      <label for="annual_income" class="block text-sm font-medium text-gray-700">Renda Anual</label>
+      <%= number_field_tag :annual_income, nil, step: :any, class: "mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" %>
+    </div>
+
+    <!-- Score de Crédito -->
+    <div class="field">
+      <label for="credit_score" class="block text-sm font-medium text-gray-700">Qual o score de crédito do aplicante?</label>
+      <%= number_field_tag :credit_score, nil, class: "mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" %>
+    </div>
+
+    <!-- Situação de Trabalho -->
+    <div class="field">
+      <label for="employment_status" class="block text-sm font-medium text-gray-700">Situação de trabalho</label>
+      <%= select_tag :employment_status, options_for_select([['Empregado', 0], ['Autônomo', 1], ['Desempregado', 2]]), class: "mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" %>
+    </div>
+
+    <!-- Escolaridade -->
+    <div class="field">
+      <label for="education_level" class="block text-sm font-medium text-gray-700">Escolaridade</label>
+      <%= select_tag :education_level, options_for_select([['Ensino médio', 3], ['Bacharelado', 1], ['MBA', 0], ['Mestrado', 4], ['Doutorado', 2]]), class: "mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" %>
+    </div>
+
+    <!-- Experiência -->
+    <div class="field">
+      <label for="experience" class="block text-sm font-medium text-gray-700">Há quanto tempo trabalha</label>
+      <%= number_field_tag :experience, nil, class: "mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" %>
+    </div>
+
+    <!-- Valor do Empréstimo -->
+    <div class="field">
+      <label for="loan_amount" class="block text-sm font-medium text-gray-700">Valor do empréstimo</label>
+      <%= number_field_tag :loan_amount, nil, step: :any, class: "mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" %>
+    </div>
+
+    <!-- Tempo de Duração do Empréstimo -->
+    <div class="field">
+      <label for="loan_duration" class="block text-sm font-medium text-gray-700">Qual o tempo de duração do empréstimo (meses)</label>
+      <%= number_field_tag :loan_duration, nil, class: "mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" %>
+    </div>
+
+    <!-- Número de Dependentes -->
+    <div class="field">
+      <label for="number_of_dependents" class="block text-sm font-medium text-gray-700">Número de dependentes</label>
+      <%= number_field_tag :number_of_dependents, nil, class: "mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" %>
+    </div>
+
+    <!-- Situação de Moradia -->
+    <div class="field">
+      <label for="home_ownership_status" class="block text-sm font-medium text-gray-700">Situação de moradia</label>
+      <%= select_tag :home_ownership_status, options_for_select([['Própria', 2], ['Alugada', 3], ['Financiada', 0], ['Outro', 1]]), class: "mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" %>
+    </div>
+
+    <!-- Valor da Parcela -->
+    <div class="field">
+      <label for="monthly_debt_payments" class="block text-sm font-medium text-gray-700">Valor da parcela</label>
+      <%= number_field_tag :monthly_debt_payments, nil, step: :any, class: "mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" %>
+    </div>
+
+    <!-- Quantidade de Empréstimos Ativos -->
+    <div class="field">
+      <label for="number_of_open_credit_lines" class="block text-sm font-medium text-gray-700">Quantidade de empréstimos ativos</label>
+      <%= number_field_tag :number_of_open_credit_lines, nil, class: "mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" %>
+    </div>
+
+    <!-- Quantidade de Pedidos de Crédito -->
+    <div class="field">
+      <label for="number_of_credit_inquiries" class="block text-sm font-medium text-gray-700">Quantidade de pedidos de crédito</label>
+      <%= number_field_tag :number_of_credit_inquiries, nil, class: "mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" %>
+    </div>
+
+    <!-- Histórico de Falência -->
+    <div class="field">
+      <label for="bankruptcy_history" class="block text-sm font-medium text-gray-700">Possui histórico de falência?</label>
+      <%= check_box_tag :bankruptcy_history, false, class: "mt-2" %>
+    </div>
+
+    <!-- Histórico de Calotes -->
+    <div class="field">
+      <label for="previous_loan_defaults" class="block text-sm font-medium text-gray-700">Possui histórico de calotes?</label>
+      <%= check_box_tag :previous_loan_defaults, false, class: "mt-2" %>
+    </div>
+
+    <!-- Quantidade de Pagamentos -->
+    <div class="field">
+      <label for="payment_history" class="block text-sm font-medium text-gray-700">Quantidade pagamentos</label>
+      <%= number_field_tag :payment_history, nil, class: "mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" %>
+    </div>
+
+    <!-- Quantidade de Créditos Concedidos -->
+    <div class="field">
+      <label for="length_of_credit_history" class="block text-sm font-medium text-gray-700">Quantidade de créditos concedidos</label>
+      <%= number_field_tag :length_of_credit_history, nil, class: "mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" %>
+    </div>
+
+    <!-- Valor Total na Poupança -->
+    <div class="field">
+      <label for="savings_account_balance" class="block text-sm font-medium text-gray-700">Valor total na poupança</label>
+      <%= number_field_tag :savings_account_balance, nil, step: :any, class: "mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" %>
+    </div>
+
+    <!-- Valor Total em Contas Corrente -->
+    <div class="field">
+      <label for="checking_account_balance" class="block text-sm font-medium text-gray-700">Valor total em contas corrente</label>
+      <%= number_field_tag :checking_account_balance, nil, step: :any, class: "mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" %>
+    </div>
+
+    <!-- Total em Dívidas -->
+    <div class="field">
+      <label for="total_liabilities" class="block text-sm font-medium text-gray-700">Total em dívidas</label>
+      <%= number_field_tag :total_liabilities, nil, step: :any, class: "mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" %>
+    </div>
+
+    <!-- Renda Mensal -->
+    <div class="field">
+      <label for="monthly_income" class="block text-sm font-medium text-gray-700">Renda mensal</label>
+      <%= number_field_tag :monthly_income, nil, step: :any, class: "mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" %>
+    </div>
+
+    <!-- Despesas Mensais -->
+    <div class="field">
+      <label for="utility_bills_payment_history" class="block text-sm font-medium text-gray-700">Despesas mensais</label>
+      <%= number_field_tag :utility_bills_payment_history, nil, step: :any, class: "mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" %>
+    </div>
+
+    <!-- Tempo no Último Emprego -->
+    <div class="field">
+      <label for="job_tenure" class="block text-sm font-medium text-gray-700">Está empregado no último emprego há quantos anos</label>
+      <%= number_field_tag :job_tenure, nil, class: "mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" %>
+    </div>
+
+    <!-- Taxa de Juros Básica Atual -->
+    <div class="field">
+      <label for="base_interest_rate" class="block text-sm font-medium text-gray-700">Taxa de juros básica atual</label>
+      <%= number_field_tag :base_interest_rate, nil, step: :any, class: "mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" %>
+    </div>
+
+    <!-- Taxa de Juros do Empréstimo -->
+    <div class="field">
+      <label for="interest_rate" class="block text-sm font-medium text-gray-700">Taxa de juros do empréstimo</label>
+      <%= number_field_tag :interest_rate, nil, step: :any, class: "mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" %>
+    </div>
+
+    <!-- Parcela Mensal do Empréstimo -->
+    <div class="field">
+      <label for="monthly_loan_payment" class="block text-sm font-medium text-gray-700">Parcela mensal do empréstimo</label>
+      <%= number_field_tag :monthly_loan_payment, nil, step: :any, class: "mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" %>
+    </div>
+
+    <div class="mt-8 text-center">
+      <%= submit_tag "Obter risco de crédito", class: "px-6 py-3 bg-indigo-600 text-white text-lg font-semibold rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500" %>
+    </div>
+  </div>
+
+<% end %>

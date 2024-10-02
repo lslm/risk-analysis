@@ -1,0 +1,9 @@
+<div class="flex items-center justify-center min-h-screen bg-gray-50">
+  <div class="text-center">
+    <h1 class="text-3xl font-bold text-gray-800 mb-4">De acordo com informações fornecidas, o cliente possui</h1>
+    <div class="text-5xl font-extrabold text-indigo-600">
+      <%= @risk_score.to_f.round %>%
+    </div>
+    <h1 class="text-3xl font-bold text-gray-800 mb-4">de chances não pagar o empréstimo</h1>
+  </div>
+</div>
