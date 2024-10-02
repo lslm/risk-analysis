@@ -36,10 +36,11 @@ notebooks/
 
 O modelo XGBoost apresentou os seguintes resultados:
 
-- Acurácia: XX%
-- Precisão: XX%
-- Recall: XX%
-- F1 Score: XX%
+- MSE: 5.525745966072004
+- RMSE: 2.3506905296257106
+- MAE: 1.6182307867262096
+- MAPE: 0.03398557930384665
+- R2 Score: 0.9070434276594164
 
 Mais detalhes podem ser encontrados no notebook XGBoostExperiment.ipynb.
 
